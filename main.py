@@ -24,7 +24,7 @@ def main():
     
     def view_entries(entries):
         for entry in entries:
-            print(f"{entry['date']}\n{entry['content']}\n\n")
+            print(f"{entry[1]}\n{entry[0]}\n\n")
     
     print(welcome)
     

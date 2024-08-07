@@ -14,11 +14,9 @@ def add_entry(entry_content, entry_date):
 
 
 def get_entries():
-    cursor = connection.execute("SELECT content, date FROM entries;")
-    entries = []
-    for row in cursor:
-        entries.append({"content": row[0], "date": row[1]})
-    return entries
+    cursor = connection.execute("SELECT * FROM entries;")
+    
+    return cursor
 
 
 def close_connection():
