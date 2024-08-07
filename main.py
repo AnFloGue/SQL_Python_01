@@ -9,6 +9,7 @@ menu = """Please select one of the following options:
 Your selection: """
 welcome = "Welcome to the programming diary!"
 
+
 def main():
     def prompt_new_entry():
         entry_content = input("What have you learned today? ")
@@ -20,21 +21,21 @@ def main():
             except ValueError:
                 print("Incorrect date format, should be YYYY-MM-DD")
         add_entry(entry_content, entry_date)
-
+    
     def view_entries(entries):
         for entry in entries:
             print(f"{entry['date']}\n{entry['content']}\n\n")
-
+    
     print(welcome)
-
+    
     while (user_input := input(menu)) != "3":
         if user_input == "1":
             prompt_new_entry()
         elif user_input == "2":
             view_entries(get_entries())
-
-    # This is only called when the while loop ends
+    
     close_connection()
+
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect("data.db")
+connection = sqlite3.connect("data/data.db")
 
 
 def create_table():
@@ -15,11 +15,11 @@ def add_entry(entry_content, entry_date):
 
 def get_entries():
     cursor = connection.execute("SELECT content, date FROM entries;")
-    return [{"content": row[0], "date": row[1]} for row in cursor]
+    entries = []
+    for row in cursor:
+        entries.append({"content": row[0], "date": row[1]})
+    return entries
 
 
 def close_connection():
     connection.close()
-
-
-create_table()
