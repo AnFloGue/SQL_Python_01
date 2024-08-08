@@ -1,6 +1,7 @@
 ___
-![SQLite Logo](https://www.sqlite.org/images/sqlite370_banner.gif)
+![SQL Logo](https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png)
 ___
+
 # Programming Diary
 
 This project is a simple command-line application for managing a programming diary. Users can add entries about what they have learned each day and view past entries. The application uses SQLite for data storage.
