@@ -1,114 +1,59 @@
+# Programming Diary
 
-___
-![Google Logo](https://static.djangoproject.com/img/logos/django-logo-negative.png)
+This project is a simple command-line application for managing a programming diary. Users can add entries about what they have learned each day and view past entries. The application uses SQLite for data storage.
 
+## Features
 
-___
+- Add new entries with a date and content.
+- View all entries.
 
-# Django Project Template
-<br>
+## Requirements
 
-___
+- Python 3.x
+- SQLite
 
+## Setup
 
-### Installation
-1. If required, remove the existing virtual environment, run the following command:
-    ```bash
-    rm -rf env
+1. Clone the repository:
+    ```sh
+    git clone REPOSITORY_URL
+    cd <repository-directory>
     ```
-
-    ```bash
-    sudo rm -rf env
-    ```
-
-2. Create a new virtual environment and activate it:
-    ```bash
-    python3 -m venv env
-    source env/bin/activate
-    ```
-
-3. Install the dependencies:
-    ```bash
+2. Install the required dependencies:
+    ```sh
     pip install -r requirements.txt
-    ```            
-   
-4. if any package has been installed, refresh (update) the dependencies document:
-    ```bash
-    pip freeze > requirements.txt
+    ```
+3. Run the application:
+    ```sh
+    python main.py
     ```
 
-### Running the Local Server
-Start the development server:
+## Usage
 
- ```bash
- python manage.py runserver
- ```
+When you run the application, you will be presented with a menu of options:
 
-   This will launch the Django local server panel at 
-   
-<http://127.0.0.1:8000>
+## Menu Options
 
-   This will launch the Django admin panel at 
-   
-<http://127.0.0.1:8000/admin/>
+### Adding a New Entry
 
+1. Select option 1.
+2. Enter what you have learned today.
+3. Enter the date in the format `YYYY-MM-DD`.
 
-### Creating Models
-1. Models define the data structure for your application. 
-2. Create your models in the `models.py` of each app.
+### Viewing Entries
 
-3. Register your models in the admin panel by adding them to the `admin.py` file in the same directory. e.g.
-    ```python
-    from django.contrib import admin
-    from .models import Model_01, Model_02, Model_03, Model_etc
+1. Select option 2 to view all entries.
 
-    admin.site.register(Model_01)
-    admin.site.register(Model_02)
-    admin.site.register(Model_03)
-    admin.site.register(Model_etc)
-    ```
+### Exiting the Application
 
-### Applying Database Changes
-1. Create migrations:
-    ```bash
-    python manage.py makemigrations
-    ```
+1. Select option 3 to exit the application.
 
-2. Apply migrations:
-    ```bash
-    python manage.py migrate
-    ```
+## Database Schema
 
-### Show Migrations Status 
-1. this command will show the migrations status:
-    ```bash
-    python manage.py showmigrations
-    ```
+The application uses an SQLite database with the following table:
 
-### Rollback Migration 
-1. this command will rollback the migrations:
-    ```bash
-    python manage.py migrate <app_name> <migration_name>
-    ```      
-   or to rollback all migrations:
-    ```bash
-    python manage.py migrate <app_name> zero
-    ```
+- `entries`: Stores entry information (content, date).
 
-### Creating an Admin User
-1. Create a superuser:
-    ```bash
-    python manage.py createsuperuser
-    ```
+## License
 
-### Run Local Server 
-1. Start the development server:
-    ```bash
-    python manage.py runserver
-    ```
-
-### Admin Panel
-1. Access the admin panel at:
-
-    <http://127.0.0.1:8000/admin/>
-    ```
+This project is licensed under the MIT License.
